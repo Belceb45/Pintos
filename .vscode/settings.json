@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.tcc": "c",
+        "fstream": "c",
+        "sstream": "c",
+        "intr-stubs.h": "c",
+        "debug.h": "c",
+        "*.inc": "c"
+    }
+}

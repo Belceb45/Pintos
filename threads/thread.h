@@ -93,6 +93,10 @@ struct thread
     /* Shared between thread.c and synch.c. */
     struct list_elem elem;              /* List element. */
 
+    /*Variable de tiempo de espera, esta nos permitirá saber cuanto
+      tiempo de espera estará el thread*///-----------------------------------------------------
+    uint64_t tiempo_espera;
+
 #ifdef USERPROG
     /* Owned by userprog/process.c. */
     uint32_t *pagedir;                  /* Page directory. */
@@ -137,5 +141,10 @@ int thread_get_nice (void);
 void thread_set_nice (int);
 int thread_get_recent_cpu (void);
 int thread_get_load_avg (void);
+
+/*Definiciones de las funciones agregadas, la primera permite insetar un thread en la cola de espera
+  y la segunda lo saca de la lista de espera para su ejecución*/
+void insertar_en_lista_espera(int64_t);//------------------------
+void eliminar_thread_lista(int64_t);//---------------------------------
 
 #endif /* threads/thread.h */
